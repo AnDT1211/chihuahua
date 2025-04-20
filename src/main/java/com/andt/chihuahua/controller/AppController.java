@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class AppController {
     @GetMapping("")
     public String hello() {
-        return "hello world!";
+        String out = "";
+        int a = 10;
+        for (int i = 0; i < a; i++) {
+            out += "hello " + i + "\n";
+        }
+        return out;
     }
 }

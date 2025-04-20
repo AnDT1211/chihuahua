@@ -16,6 +16,7 @@ WORKDIR /app
 # Copy the JAR file from the builder stage
 COPY --from=builder /app/target/chihuahua-0.0.1-SNAPSHOT.jar .
 
-EXPOSE 8080
+EXPOSE 8080 5005
 
-ENTRYPOINT ["java", "-jar", "chihuahua-0.0.1-SNAPSHOT.jar"]
+# ENTRYPOINT ["java", "-jar", "chihuahua-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005", "-jar", "chihuahua-0.0.1-SNAPSHOT.jar"]
