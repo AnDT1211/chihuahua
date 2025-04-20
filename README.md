@@ -4,6 +4,10 @@
 sudo docker compose up --build
 ```
 
+access 
+- `http:localhost`
+- `https:localhost`
+
 ## Debug:
 
 Do the following:
